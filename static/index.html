@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 资源空间</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧 3D 场景 -->
+        <div class="scene-panel">
+            <div id="scene-container"></div>
+            <div class="scene-hint">拖拽旋转 · 滚轮缩放 · 右键平移</div>
+        </div>
+        <!-- 右侧操作面板 -->
+        <div class="control-panel">
+            <!-- 创建中心点 -->
+            <div class="panel-section">
+                <h3 class="section-title">+ 创建中心点</h3>
+                <input id="center-name" type="text" placeholder="名称" class="input-field">
+                <div class="coord-row">
+                    <input id="center-x" type="number" value="0" placeholder="X" class="input-field coord">
+                    <input id="center-y" type="number" value="0" placeholder="Y" class="input-field coord">
+                    <input id="center-z" type="number" value="0" placeholder="Z" class="input-field coord">
+                </div>
+                <button id="btn-add-center" class="btn btn-center">添加中心点</button>
+            </div>
+            <!-- 创建资源球 -->
+            <div class="panel-section">
+                <h3 class="section-title">+ 创建资源球</h3>
+                <div class="name-row">
+                    <input id="sphere-name" type="text" placeholder="名称" class="input-field">
+                    <input id="sphere-radius" type="number" value="1" step="0.1" min="0.1" placeholder="模长" class="input-field short">
+                </div>
+                <div class="section-label">关联中心点及权重：</div>
+                <div id="sphere-relations" class="relation-list"></div>
+                <div id="sphere-preview" class="coord-preview"></div>
+                <button id="btn-add-sphere" class="btn btn-sphere">添加资源球</button>
+            </div>
+            <!-- 元素列表 -->
+            <div class="panel-section">
+                <h3 class="section-title">元素列表</h3>
+                <div id="element-list" class="element-list"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r170/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.170.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
