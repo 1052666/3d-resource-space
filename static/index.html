@@ -38,10 +38,55 @@
                 <div id="sphere-preview" class="coord-preview"></div>
                 <button id="btn-add-sphere" class="btn btn-sphere">添加资源球</button>
             </div>
+            <!-- 投影查询 -->
+            <div class="panel-section">
+                <h3 class="section-title">🔍 投影查询</h3>
+                <div class="section-label">起点资源球：</div>
+                <select id="proj-source" class="input-field">
+                    <option value="">选择资源球...</option>
+                </select>
+                <div class="section-label">方向参考资源球：</div>
+                <select id="proj-target" class="input-field">
+                    <option value="">选择资源球...</option>
+                </select>
+                <div class="section-label">圆柱半径：</div>
+                <input id="proj-radius" type="number" value="2" step="0.1" min="0.1" class="input-field">
+                <div class="section-label">筛选模式：</div>
+                <div class="filter-modes">
+                    <button class="filter-btn" data-mode="intersect">相交</button>
+                    <button class="filter-btn" data-mode="contain">包含</button>
+                    <button class="filter-btn active" data-mode="both">两者</button>
+                </div>
+                <button id="btn-add-projection" class="btn btn-projection">添加投影</button>
+                <div class="section-label" style="margin-top:10px;">已添加投影：</div>
+                <div id="projection-list"></div>
+                <div id="projection-result" class="projection-result" style="display:none;">
+                    <div class="section-label">结果集（并集）：</div>
+                    <div id="projection-result-list"></div>
+                </div>
+            </div>
             <!-- 元素列表 -->
             <div class="panel-section">
                 <h3 class="section-title">元素列表</h3>
                 <div id="element-list" class="element-list"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 编辑资源球模态框 -->
+    <div id="edit-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <h3 class="modal-title">编辑资源球</h3>
+            <input id="edit-sphere-name" type="text" placeholder="名称" class="input-field">
+            <div class="name-row">
+                <span class="section-label" style="margin:0;">模长：</span>
+                <input id="edit-sphere-radius" type="number" value="1" step="0.1" min="0.1" class="input-field short">
+            </div>
+            <div class="section-label" style="margin-top:10px;">关联中心点及权重：</div>
+            <div id="edit-sphere-relations" class="relation-list"></div>
+            <div id="edit-sphere-preview" class="coord-preview"></div>
+            <div class="modal-actions">
+                <button id="btn-edit-cancel" class="btn btn-cancel">取消</button>
+                <button id="btn-edit-save" class="btn btn-sphere">保存</button>
             </div>
         </div>
     </div>
