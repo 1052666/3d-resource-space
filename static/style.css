@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: #1a1a2e;
+    color: #ccc;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- 3D 场景 --- */
+.scene-panel {
+    flex: 7;
+    position: relative;
+    background: #0f0f23;
+}
+
+#scene-container {
+    width: 100%;
+    height: 100%;
+}
+
+.scene-hint {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* --- 操作面板 --- */
+.control-panel {
+    flex: 3;
+    background: #2d2d44;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-left: 1px solid #3d3d5c;
+}
+
+.panel-section {
+    background: #3d3d5c;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.section-label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+/* --- 输入框 --- */
+.input-field {
+    width: 100%;
+    background: #1a1a2e;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #4ecdc4;
+}
+
+.coord-row {
+    display: flex;
+    gap: 6px;
+}
+
+.coord-row .input-field {
+    margin-bottom: 8px;
+}
+
+.name-row {
+    display: flex;
+    gap: 6px;
+}
+
+.name-row .input-field {
+    flex: 1;
+}
+
+.short {
+    width: 80px !important;
+    flex: none !important;
+}
+
+/* --- 关联列表 --- */
+.relation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.relation-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.relation-item input[type="checkbox"] {
+    accent-color: #ff6b6b;
+}
+
+.relation-item .center-label {
+    color: #ff6b6b;
+    flex: 1;
+}
+
+.relation-item .weight-input {
+    width: 60px;
+    background: #1a1a2e;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* --- 坐标预览 --- */
+.coord-preview {
+    font-size: 12px;
+    color: #4ecdc4;
+    margin-bottom: 8px;
+    min-height: 18px;
+}
+
+/* --- 按钮 --- */
+.btn {
+    width: 100%;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-center {
+    background: #ff6b6b;
+    color: #fff;
+}
+
+.btn-sphere {
+    background: #4ecdc4;
+    color: #1a1a2e;
+}
+
+/* --- 元素列表 --- */
+.element-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.element-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    background: #1a1a2e;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.element-item:hover {
+    background: #2a2a4e;
+}
+
+.element-item.highlighted {
+    background: #3a3a6e;
+    outline: 1px solid #4ecdc4;
+}
+
+.element-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot-center {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff6b6b;
+}
+
+.dot-sphere {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ecdc4;
+}
+
+.element-name {
+    color: #fff;
+}
+
+.element-detail {
+    color: #888;
+}
+
+.element-delete {
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0 4px;
+}
+
+.element-delete:hover {
+    color: #ff6b6b;
+}
